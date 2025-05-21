@@ -12,6 +12,9 @@ A full-stack task management system built with:
 ## 🚀 Features
 
 - View all tasks
+- Create a new task
+- Find and edit a task by its id
+- Delete a task
 - Connects to a Rails API backend
 - API documentation powered by Swagger
 
