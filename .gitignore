@@ -33,3 +33,6 @@
 /config/master.key
 .env
 !.env.example
+
+# Ignore system logs
+dev-test-api/log/*.log

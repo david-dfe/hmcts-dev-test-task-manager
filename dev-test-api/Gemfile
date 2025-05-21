@@ -40,4 +40,13 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem 'dotenv-rails', groups: [:development, :test]
+
+  # Use rswag to document APIs
+  gem "rswag"
+  gem "rswag-ui"
+  gem "rswag-api"
+  gem "rswag-specs"
 end
+
+gem "rspec-rails", "~> 8.0"
+gem "faker"

@@ -1,579 +1,591 @@
-  [1m[35m (105.1ms)[0m  [1m[35mCREATE DATABASE "task_manager_api_development" ENCODING = 'unicode'[0m
-  [1m[35m (884.0ms)[0m  [1m[35mCREATE DATABASE "task_manager_api_development" ENCODING = 'unicode'[0m
-  [1m[35m (131.9ms)[0m  [1m[35mCREATE DATABASE "task_manager_api_test" ENCODING = 'unicode'[0m
-  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5227565958280157835)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
-  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-11 19:45:00.728888', '2025-05-11 19:45:00.728890') RETURNING "key"[0m
-  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5227565958280157835)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[35m (114.7ms)[0m  [1m[35mCREATE DATABASE "hmcts_task_manager_dev" ENCODING = 'unicode'[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[35m (379.0ms)[0m  [1m[35mCREATE DATABASE "hmcts_task_manager_dev" ENCODING = 'unicode'[0m
-  [1m[35m (154.0ms)[0m  [1m[35mCREATE DATABASE "hmcts_task_manager_test" ENCODING = 'unicode'[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[35m (14.8ms)[0m  [1m[35mCREATE DATABASE "hmcts_task_manager_dev" ENCODING = 'unicode'[0m
-  [1m[35m (19.8ms)[0m  [1m[35mCREATE DATABASE "hmcts_task_manager_test" ENCODING = 'unicode'[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-11 20:56:16 +0100
-  [1m[35m (126.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
-  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
-ActionController::RoutingError (No route matches [POST] "/api/v1/tasks"):
-  
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-11 20:58:05 +0100
-  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
-ActionController::RoutingError (uninitialized constant Api):
-
-Causes:
-ActionDispatch::MissingController (uninitialized constant Api)
-NameError (uninitialized constant Api)
-  
-Started POST "/api/v1/tasks" for ::1 at 2025-05-11 20:58:49 +0100
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:29:35 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"Complete Backend Setup", "description"=>"Finalize backend for task manager", "status"=>"Pending", "due_date"=>"2025-06-01T12:00:00Z"}}
-Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test", "status"=>"", "due_date"=>"2025-05-03T15:26:00.000Z"}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
-  
-NameError (uninitialized constant Api::V1::TasksController::Task):
-  
-app/controllers/api/v1/tasks_controller.rb:6:in `create'
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-11 20:59:23 +0100
-  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:30:38 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"Complete Backend Setup", "description"=>"Finalize backend for task manager", "status"=>"Pending", "due_date"=>"2025-06-01T12:00:00Z"}}
-Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test", "status"=>"ready_to_start", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+Completed 422 Unprocessable Content in 5ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
-  
-NameError (uninitialized constant Api::V1::TasksController::Task):
-  
-app/controllers/api/v1/tasks_controller.rb:6:in `create'
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1191957733117837980)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
-  [1m[36mActiveRecord::InternalMetadata Create (7.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-11 20:00:40.308236', '2025-05-11 20:00:40.308238') RETURNING "key"[0m
-Migrating to CreateTasks (20250511200007)
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (34.4ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" bigserial primary key, "title" character varying, "description" text, "status" character varying, "due_date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
-  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250511200007') RETURNING "version"[0m
-  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1191957733117837980)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-11 21:00:48 +0100
-  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:32:01 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"Complete Backend Setup", "description"=>"Finalize backend for task manager", "status"=>"Pending", "due_date"=>"2025-06-01T12:00:00Z"}}
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-  [1m[36mTask Create (2.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Complete Backend Setup"], ["description", "Finalize backend for task manager"], ["status", "Pending"], ["due_date", "2025-06-01 12:00:00"], ["created_at", "2025-05-11 20:00:48.182294"], ["updated_at", "2025-05-11 20:00:48.182294"]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-  [1m[36mTRANSACTION (7.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-Completed 201 Created in 44ms (Views: 0.2ms | ActiveRecord: 32.3ms (1 query, 0 cached) | GC: 0.0ms)
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test", "status"=>"ready_to_start", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+Completed 422 Unprocessable Content in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[36mActiveRecord::SchemaMigration Load (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-12 10:15:10 +0100
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:25 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"Complete Frontend Design", "description"=>"Finalize the UI/UX for the app", "status"=>"Pending", "due_date"=>"2025-06-10T12:00:00Z"}}
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test", "status"=>"ready_to_start", "due_date"=>"2025-07-04T15:30:00.000Z"}}
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-  [1m[36mTask Create (11.1ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Complete Frontend Design"], ["description", "Finalize the UI/UX for the app"], ["status", "Pending"], ["due_date", "2025-06-10 12:00:00"], ["created_at", "2025-05-12 09:15:10.128606"], ["updated_at", "2025-05-12 09:15:10.128606"]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:7:in `create'
-Completed 201 Created in 44ms (Views: 0.2ms | ActiveRecord: 30.4ms (1 query, 0 cached) | GC: 0.6ms)
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (29.6ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["description", "test"], ["status", "ready_to_start"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:36:25.869659"], ["updated_at", "2025-05-21 15:36:25.869659"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 68ms (Views: 0.2ms | ActiveRecord: 63.3ms (1 query, 0 cached) | GC: 12.9ms)
 
 
-Started POST "/api/v1/tasks" for ::1 at 2025-05-12 10:15:34 +0100
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:48 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"description"=>"This is an invalid task", "status"=>"Pending"}}
-Completed 422 Unprocessable Content in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"backlog", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+Completed 422 Unprocessable Content in 15ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1191957733117837980)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (17.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1191957733117837980)[0m
-  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started GET "/api/v1/tasks" for ::1 at 2025-05-12 10:33:17 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (37.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 55ms (Views: -20.8ms | ActiveRecord: 61.2ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks/1" for ::1 at 2025-05-12 10:33:32 +0100
-Processing by Api::V1::TasksController#show as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
-Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks/2" for ::1 at 2025-05-12 10:33:39 +0100
-Processing by Api::V1::TasksController#show as */*
-  Parameters: {"id"=>"2"}
-  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
-Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started POST "/api/v1/tasks" for ::1 at 2025-05-12 10:33:57 +0100
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:50 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"New Task", "description"=>"Test task creation", "status"=>"Pending", "due_date"=>"2025-06-01T12:00:00Z"}}
-  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"backlog", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:54 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"ready_to_start", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-  [1m[36mTask Create (2.6ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New Task"], ["description", "Test task creation"], ["status", "Pending"], ["due_date", "2025-06-01 12:00:00"], ["created_at", "2025-05-12 09:33:57.558137"], ["updated_at", "2025-05-12 09:33:57.558137"]]
+  [1m[36mTask Create (4.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New task now"], ["description", "test"], ["status", "ready_to_start"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:36:54.410274"], ["updated_at", "2025-05-21 15:36:54.410274"]]
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-  [1m[36mTRANSACTION (11.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-Completed 201 Created in 17ms (Views: 0.2ms | ActiveRecord: 14.9ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 201 Created in 14ms (Views: 0.5ms | ActiveRecord: 7.6ms (1 query, 0 cached) | GC: 2.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-12 10:34:09 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks/3" for ::1 at 2025-05-12 10:34:13 +0100
-Processing by Api::V1::TasksController#show as */*
-  Parameters: {"id"=>"3"}
-  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
-Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started PATCH "/api/v1/tasks/3" for ::1 at 2025-05-12 10:34:24 +0100
-Processing by Api::V1::TasksController#update as */*
-  Parameters: {"task"=>{"status"=>"Completed"}, "id"=>"3"}
-  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
-Completed 422 Unprocessable Content in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started PATCH "/api/v1/tasks/3" for ::1 at 2025-05-12 10:34:30 +0100
-Processing by Api::V1::TasksController#update as */*
-  Parameters: {"task"=>{"status"=>"Completed"}, "id"=>"3"}
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
-Completed 422 Unprocessable Content in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started PATCH "/api/v1/tasks/1" for ::1 at 2025-05-12 10:34:34 +0100
-Processing by Api::V1::TasksController#update as */*
-  Parameters: {"task"=>{"status"=>"Completed"}, "id"=>"1"}
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
-Completed 422 Unprocessable Content in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started PATCH "/api/v1/tasks/1" for ::1 at 2025-05-12 10:36:43 +0100
-Processing by Api::V1::TasksController#update as */*
-  Parameters: {"task"=>{"status"=>"Completed"}, "id"=>"1"}
-  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
-Completed 422 Unprocessable Content in 425ms (Views: 0.1ms | ActiveRecord: 421.1ms (1 query, 0 cached) | GC: 0.1ms)
-
-
-Started PATCH "/api/v1/tasks/1" for ::1 at 2025-05-12 10:37:14 +0100
-Processing by Api::V1::TasksController#update as */*
-  Parameters: {"task"=>{"status"=>"Done"}, "id"=>"1"}
-  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
-  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
-  [1m[36mTask Update (1.7ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["status", "Done"], ["updated_at", "2025-05-12 09:37:14.117997"], ["id", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
-  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
-Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.8ms (2 queries, 0 cached) | GC: 0.0ms)
-
-
-Started DELETE "/api/v1/tasks/1" for ::1 at 2025-05-12 10:38:40 +0100
-Processing by Api::V1::TasksController#destroy as */*
-  Parameters: {"id"=>"1"}
-  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:46:in `destroy'
-  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
-  [1m[36mTask Destroy (2.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 1]]
-  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:57 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"in_progress", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (4.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New task now"], ["description", "test"], ["status", "in_progress"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:36:57.165083"], ["updated_at", "2025-05-21 15:36:57.165083"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
-Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 5.9ms (2 queries, 0 cached) | GC: 0.0ms)
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 9ms (Views: 0.2ms | ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 0.9ms)
 
 
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started POST "/api/v1/tasks" for ::1 at 2025-05-12 15:41:19 +0100
-  [1m[36mActiveRecord::SchemaMigration Load (14.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:36:58 +0100
 Processing by Api::V1::TasksController#create as */*
-  Parameters: {"task"=>{"title"=>"Complete Backend Setup", "description"=>"Finalize backend for task manager", "status"=>"Pending", "due_date"=>"2025-06-01T12:00:00Z"}}
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"in_progress", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (1.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New task now"], ["description", "test"], ["status", "in_progress"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:36:58.599240"], ["updated_at", "2025-05-21 15:36:58.599240"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 4ms (Views: 0.1ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:37:00 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"done", "due_date"=>"2025-07-04T15:30:00.000Z"}}
   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-  [1m[36mTask Create (8.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Complete Backend Setup"], ["description", "Finalize backend for task manager"], ["status", "Pending"], ["due_date", "2025-06-01 12:00:00"], ["created_at", "2025-05-12 14:41:19.611503"], ["updated_at", "2025-05-12 14:41:19.611503"]]
+  [1m[36mTask Create (1.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New task now"], ["description", "test"], ["status", "done"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:37:00.501705"], ["updated_at", "2025-05-21 15:37:00.501705"]]
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
-Completed 201 Created in 153ms (Views: 0.2ms | ActiveRecord: 116.6ms (1 query, 0 cached) | GC: 17.2ms)
+Completed 201 Created in 5ms (Views: 0.1ms | ActiveRecord: 3.3ms (1 query, 0 cached) | GC: 0.3ms)
 
 
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
-[dotenv] Loaded [33m.env[0m
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:39:14 +0100
-  [1m[36mActiveRecord::SchemaMigration Load (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 16:37:10 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"New task now", "description"=>"test", "status"=>"backlog", "due_date"=>"2025-07-04T15:30:00.000Z"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "New task now"], ["description", "test"], ["status", "backlog"], ["due_date", "2025-07-04 15:30:00"], ["created_at", "2025-05-21 15:37:10.938142"], ["updated_at", "2025-05-21 15:37:10.938142"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 9ms (Views: 0.1ms | ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:37:13 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (35.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (3.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 193ms (Views: -2.2ms | ActiveRecord: 157.5ms (1 query, 0 cached) | GC: 18.7ms)
+Completed 200 OK in 21ms (Views: 2.0ms | ActiveRecord: 3.7ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:39:15 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.3ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:43:53 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.3ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:43:53 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.6ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:44:46 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:37:13 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:44:46 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:39:22 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (4.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:48:40 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:39:22 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:48:40 +0100
+Started GET "/api/v1/tasks/1" for ::1 at 2025-05-21 16:44:44 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (9.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 404 Not Found in 96ms (Views: 0.3ms | ActiveRecord: 71.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/2" for ::1 at 2025-05-21 16:44:49 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (2.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/8" for ::1 at 2025-05-21 16:46:06 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/9" for ::1 at 2025-05-21 16:46:09 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 23.3ms)
+
+
+Started GET "/api/v1/tasks/9" for ::1 at 2025-05-21 16:52:51 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mTask Load (1.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 33ms (Views: 0.4ms | ActiveRecord: 15.3ms (1 query, 0 cached) | GC: 4.7ms)
+
+
+Started GET "/api/v1/tasks/8" for ::1 at 2025-05-21 16:52:54 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/2" for ::1 at 2025-05-21 16:52:57 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/3" for ::1 at 2025-05-21 16:53:00 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/v1/tasks/3" for ::1 at 2025-05-21 16:53:26 +0100
+Processing by Api::V1::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"New Task", "description"=>"Test task creation", "status"=>"ready_to_start", "due_date"=>"2025-06-01T11:00:00.000Z"}, "id"=>"3"}
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTask Update (3.2ms)[0m  [1m[33mUPDATE "tasks" SET "status" = $1, "due_date" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["status", "ready_to_start"], ["due_date", "2025-06-01 11:00:00"], ["updated_at", "2025-05-21 15:53:26.289107"], ["id", 3]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 5.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/v1/tasks/3" for ::1 at 2025-05-21 16:53:52 +0100
+Processing by Api::V1::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"New Task", "description"=>"Test task creation UPDATED", "status"=>"ready_to_start", "due_date"=>"2025-06-01T11:00:00.000Z"}, "id"=>"3"}
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTask Update (2.3ms)[0m  [1m[33mUPDATE "tasks" SET "description" = $1, "updated_at" = $2 WHERE "tasks"."id" = $3[0m  [["description", "Test task creation UPDATED"], ["updated_at", "2025-05-21 15:53:52.672073"], ["id", 3]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 5.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks/6" for ::1 at 2025-05-21 16:53:56 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/api/v1/tasks/3" for ::1 at 2025-05-21 16:53:59 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:57:31 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.9ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:48:58 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 16:57:31 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.7ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:48:58 +0100
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 17:00:53 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"to delete", "description"=>"this task is to be deleted", "status"=>"backlog", "due_date"=>"2025-06-05T16:00:00.000Z"}}
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (5.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "to delete"], ["description", "this task is to be deleted"], ["status", "backlog"], ["due_date", "2025-06-05 16:00:00"], ["created_at", "2025-05-21 16:00:53.686247"], ["updated_at", "2025-05-21 16:00:53.686247"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 8.2ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:00:56 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:52:33 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:52:33 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:52:33 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:52:33 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:54:23 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:54:23 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:55:07 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:00:56 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:55:07 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/api/v1/tasks/11" for ::1 at 2025-05-21 17:01:11 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:55:07 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Started PATCH "/api/v1/tasks/11" for ::1 at 2025-05-21 17:01:20 +0100
+Processing by Api::V1::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"to delete", "description"=>"this task is to be deleted. testinupdate", "status"=>"backlog", "due_date"=>"2025-06-05T15:00:00.000Z"}, "id"=>"11"}
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTask Update (2.2ms)[0m  [1m[33mUPDATE "tasks" SET "description" = $1, "due_date" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["description", "this task is to be deleted. testinupdate"], ["due_date", "2025-06-05 15:00:00"], ["updated_at", "2025-05-21 16:01:20.902836"], ["id", 11]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 14:55:07 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+Started DELETE "/api/v1/tasks/11" for ::1 at 2025-05-21 17:01:36 +0100
+Processing by Api::V1::TasksController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:46:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
+  [1m[36mTask Destroy (1.7ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:48:in `destroy'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 3.2ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:01:42 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (50.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 52ms (Views: -29.7ms | ActiveRecord: 81.9ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/api/v1/tasks/11" for ::1 at 2025-05-21 17:01:40 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:01:42 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:01:42 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:01:42 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:03:11 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:03:11 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:03:20 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:03:20 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 12.3ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:04:29 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:04:29 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.1ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:05:23 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:05:23 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:06:19 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:01:44 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:06:19 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:10 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (45.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 47ms (Views: -30.2ms | ActiveRecord: 77.0ms (1 query, 0 cached) | GC: 0.5ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:10 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:01:44 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:22 +0100
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 17:47:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (11.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test", "status"=>"in_progress", "due_date"=>"2025-05-02T16:47:00.000Z"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (10.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["description", "test"], ["status", "in_progress"], ["due_date", "2025-05-02 16:47:00"], ["created_at", "2025-05-21 16:47:16.282772"], ["updated_at", "2025-05-21 16:47:16.282772"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 157ms (Views: 0.4ms | ActiveRecord: 138.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:47:18 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (8.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 5.0ms | ActiveRecord: 8.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:22 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:47:18 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:46 +0100
+Started GET "/api/v1/tasks/12" for ::1 at 2025-05-21 17:47:24 +0100
+Processing by Api::V1::TasksController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/v1/tasks/12" for ::1 at 2025-05-21 17:47:27 +0100
+Processing by Api::V1::TasksController#update as */*
+  Parameters: {"task"=>{"title"=>"test", "description"=>"test update", "status"=>"in_progress", "due_date"=>"2025-05-02T15:47:00.000Z"}, "id"=>"12"}
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTask Update (2.3ms)[0m  [1m[33mUPDATE "tasks" SET "description" = $1, "due_date" = $2, "updated_at" = $3 WHERE "tasks"."id" = $4[0m  [["description", "test update"], ["due_date", "2025-05-02 15:47:00"], ["updated_at", "2025-05-21 16:47:27.776121"], ["id", 12]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:33:in `update'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 5.4ms (2 queries, 0 cached) | GC: 24.4ms)
+
+
+Started DELETE "/api/v1/tasks/12" for ::1 at 2025-05-21 17:47:33 +0100
+Processing by Api::V1::TasksController#destroy as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:47:in `destroy'
+  [1m[36mTask Destroy (2.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:47:in `destroy'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:47:in `destroy'
+Completed 204 No Content in 9ms (ActiveRecord: 5.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:47:35 +0100
 Processing by Api::V1::TasksController#index as */*
   [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:15:46 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 17:47:35 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (3.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (5.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 5.0ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:20:52 +0100
+Started GET "/api-docs" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:00:58 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:22 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:23 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:02:24 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:05:51 +0100
+  
+ArgumentError (Invalid route name, already in use: 'rswag_ui' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+https://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:6:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/favicon.ico" for ::1 at 2025-05-21 18:05:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:06:33 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:06:33 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:06:33 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:06:33 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:06:33 +0100
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, and [36mPOSTGRES_DB_TEST[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:06:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:06:48 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:06:48 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:06:48 +0100
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2025-05-21 18:06:48 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:06:48 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 18:14:41 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (3.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (29.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 3.5ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 166ms (Views: -0.8ms | ActiveRecord: 147.8ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:20:52 +0100
+Started GET "/api/v1/tasks" for ::1 at 2025-05-21 18:14:41 +0100
 Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTask Load (1.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
   ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:20:52 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (2.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+Started POST "/api/v1/tasks" for ::1 at 2025-05-21 18:18:26 +0100
+Processing by Api::V1::TasksController#create as */*
+  Parameters: {"task"=>{"title"=>"test", "description"=>"", "status"=>"backlog", "due_date"=>"2025-05-30T17:17:00.000Z"}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTask Create (10.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test"], ["description", ""], ["status", "backlog"], ["due_date", "2025-05-30 17:17:00"], ["created_at", "2025-05-21 17:18:26.612216"], ["updated_at", "2025-05-21 17:18:26.612216"]]
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/tasks_controller.rb:22:in `create'
+Completed 201 Created in 34ms (Views: 0.7ms | ActiveRecord: 22.9ms (1 query, 0 cached) | GC: 0.0ms)
 
 
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:20:52 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:24:58 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
-
-
-Started GET "/api/v1/tasks" for ::1 at 2025-05-14 15:24:58 +0100
-Processing by Api::V1::TasksController#index as */*
-  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
-  ↳ app/controllers/api/v1/tasks_controller.rb:5:in `index'
-Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
-
-
+[dotenv] Set [36mPOSTGRES_USER[0m, [36mPOSTGRES_PASSWORD[0m, [36mPOSTGRES_DB_DEV[0m, [36mPOSTGRES_DB_TEST[0m, and [36mPORT[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTask Load (1.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (1.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (1.3ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (1.2ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (1.1ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (1.2ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 10]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (2.9ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Destroy (2.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 13]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (10.3ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 1"], ["description", "This is the description for Task 1."], ["status", "done"], ["due_date", "2025-05-30 20:30:15"], ["created_at", "2025-05-16 17:29:25.706235"], ["updated_at", "2025-05-19 17:29:25.706269"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 2"], ["description", "This is the description for Task 2."], ["status", "backlog"], ["due_date", "2025-06-19 16:22:28"], ["created_at", "2025-05-19 17:29:25.719090"], ["updated_at", "2025-05-19 17:29:25.719112"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 3"], ["description", "This is the description for Task 3."], ["status", "backlog"], ["due_date", "2025-06-02 17:16:36"], ["created_at", "2025-05-20 17:29:25.721301"], ["updated_at", "2025-05-20 17:29:25.721313"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 4"], ["description", "This is the description for Task 4."], ["status", "done"], ["due_date", "2025-06-18 17:51:43"], ["created_at", "2025-05-20 17:29:25.724162"], ["updated_at", "2025-05-19 17:29:25.724173"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 5"], ["description", "This is the description for Task 5."], ["status", "backlog"], ["due_date", "2025-06-16 18:19:14"], ["created_at", "2025-05-20 17:29:25.726106"], ["updated_at", "2025-05-20 17:29:25.726116"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (0.8ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 6"], ["description", "This is the description for Task 6."], ["status", "in_progress"], ["due_date", "2025-05-26 19:53:17"], ["created_at", "2025-05-17 17:29:25.727924"], ["updated_at", "2025-05-20 17:29:25.727934"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.7ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 7"], ["description", "This is the description for Task 7."], ["status", "backlog"], ["due_date", "2025-06-16 19:53:17"], ["created_at", "2025-05-19 17:29:25.731504"], ["updated_at", "2025-05-20 17:29:25.731516"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.0ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 8"], ["description", "This is the description for Task 8."], ["status", "in_progress"], ["due_date", "2025-06-20 17:46:10"], ["created_at", "2025-05-19 17:29:25.736356"], ["updated_at", "2025-05-19 17:29:25.736371"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 9"], ["description", "This is the description for Task 9."], ["status", "in_progress"], ["due_date", "2025-05-28 16:57:56"], ["created_at", "2025-05-20 17:29:25.739534"], ["updated_at", "2025-05-19 17:29:25.739546"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTask Create (1.2ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "status", "due_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Task 10"], ["description", "This is the description for Task 10."], ["status", "ready_to_start"], ["due_date", "2025-06-05 20:43:01"], ["created_at", "2025-05-18 17:29:25.742695"], ["updated_at", "2025-05-19 17:29:25.742706"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTask Count (16.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+Started GET "/api-docs" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/index.html" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/swagger-ui.css" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/swagger-ui-bundle.js" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/swagger-ui-standalone-preset.js" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/v1/swagger.yaml" for ::1 at 2025-05-21 18:30:02 +0100
+Started GET "/api-docs/favicon-32x32.png" for ::1 at 2025-05-21 18:30:02 +0100

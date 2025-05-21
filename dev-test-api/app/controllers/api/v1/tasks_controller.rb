@@ -11,7 +11,7 @@ class Api::V1::TasksController < ApplicationController
     if task
       render json: task
     else
-      render json: { error: "Task not found" }, status: :not_found
+      head :not_found
     end
   end
 
@@ -31,30 +31,28 @@ class Api::V1::TasksController < ApplicationController
     task = Task.find_by(id: params[:id])
     if task
       if task.update(task_params)
-        render json: task, status: :ok
+        render json: task
       else
-        render json: { error: 'Failed to update task', details: task.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: task.errors.full_messages }, status: :unprocessable_entity
       end
     else
-      render json: { error: 'Task not found' }, status: :not_found
+      head :not_found
     end
   end
-
 
   # DELETE /api/v1/tasks/:id
   def destroy
     task = Task.find_by(id: params[:id])
     if task
       task.destroy
-      render json: { message: "Task deleted successfully" }, status: :ok
+      head :no_content
     else
-      render json: { error: "Task not found" }, status: :not_found
+      head :not_found
     end
   end
 
   private
 
-  # Strong parameters
   def task_params
     params.require(:task).permit(:title, :description, :status, :due_date)
   end
